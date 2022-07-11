@@ -20,12 +20,14 @@ class TaskManager  {
 };
 const newTask = new TaskManager()
 
-let submitForm = document.getElementById('submit-form');
-submitForm.addEventListener('submit', () => {
+let submitForm = document.getElementById('submitButton');
+submitForm.addEventListener('click', (event) => {
+  event.preventDefault();
   newTask.addTask(
-    document.getElementByID("taskName").value,
-    document.getElementByID("description").value,
-    document.getElementByID("assignedTo").value,
-    document.getElementByID("dueDate").value
+    document.getElementById("taskName").value,
+    document.getElementById("description").value,
+    document.getElementById("assignedTo").value,
+    document.getElementById("dueDate").value
+  )
 })
 
