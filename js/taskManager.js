@@ -21,6 +21,7 @@ class TaskManager  {
 const newTask = new TaskManager()
 
 let submitForm = document.getElementById('submitButton');
+console.log(document.getElementById('submitButton'))
 submitForm.addEventListener('click', (event) => {
   event.preventDefault();
   newTask.addTask(
@@ -29,5 +30,6 @@ submitForm.addEventListener('click', (event) => {
     document.getElementById("assignedTo").value,
     document.getElementById("dueDate").value
   )
-})
+  }
+)
 
