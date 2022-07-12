@@ -1,3 +1,20 @@
+const createTaskHtml = (taskName, description, assignedTo, dueDate, status) => {
+  const html = `
+    <li class="list-group-item">
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">${taskName}</h5>
+            <p>${description}</p>
+            <p class="font-weight-bold">${dueDate}</p>
+            <p class="font-weight-bold">Owner: <span class="font-weight-normal">${assignedTo}</span></p>
+            <button type="button" class="btn delete-button btn-danger">Delete</button>
+            <button type="button" class="btn done-button btn-success visible">${status}</button>
+        </div>
+      </div>
+    </li>
+  `
+  return html;
+}
 class TaskManager  {
   constructor (currentId) {
     this.tasks = [];
