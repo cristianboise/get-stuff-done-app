@@ -35,6 +35,11 @@ submitForm.addEventListener('click', (event) => {
         document.getElementById("assignedTo").value,
         document.getElementById("dueDate").value
       )
+      // clear the fields for new task submission
+      document.getElementById("taskName").value = ''
+      document.getElementById("description").value = ''
+      document.getElementById("assignedTo").value = ''
+      document.getElementById("dueDate").value = ''
     } else {
       alert('Form is either incomplete or invalid.  Please try again.')
     }
