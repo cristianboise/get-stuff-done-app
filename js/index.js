@@ -1,6 +1,7 @@
 document.getElementById("submit-form").addEventListener("submit", function(event) {
 
         event.preventDefault();
+        document.getElementById("AlertMessage").style.display = 'none';
         console.log('Working!');
         let taskNameValue = document.getElementById("taskName").value
         let descriptionValue = document.getElementById("description").value
@@ -22,7 +23,24 @@ document.getElementById("submit-form").addEventListener("submit", function(event
         document.getElementById("assignedTo").value = ''
         document.getElementById("dueDate").value = ''
         } else {
-            alert('Form is either incomplete or invalid.  Please try again.')
+            // alert('Form is either incomplete or invalid.  Please try again.')
+            let alertList = [];
+            if (taskNameValue  === "") {
+                alertList.push('taskname')
+            }
+            if (descriptionValue  === "") {
+                alertList.push('description')
+            }
+            if (assignedToValue  === "") {
+                alertList.push('assignedTo')
+            }
+            if (dueDateValue  === "") {
+                alertList.push('dueDate')
+            }
+            alertList = alertList.join(", ");
+            document.getElementById("AlertMessage").style.display = 'block';
+            document.getElementById("AlertMessage").innerHTML = `The following fields are required: ${alertList}`
         }
-        newTask.render();
+      newTask.render();
     });
+
