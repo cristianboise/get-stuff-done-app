@@ -1,3 +1,7 @@
-let taskHtml = createTaskHtml('Pay the bills', 'Do not forget to pay the bill', 'Melvin', 'tomorrow', 'bonk');
+document.getElementById("submit-form").addEventListener("submit", function(event) {
 
-console.log(taskHtml);
+        console.log('Working!');
+        event.preventDefault();
+        newTask.addTask();
+        newTask.render();
+    });
