@@ -31,6 +31,21 @@ class TaskManager  {
     };
     this.tasks.push(task);
   }
+  render(){
+    let tasksHtmlList = [];
+    this.tasks.forEach((task) => {
+      let newDate = new Date(task.dueDate);
+      let formattedDate = `${newDate.getMonth() + 1}/${newDate.getDate()}/${newDate.getFullYear()}`;
+      let taskHtml = createTaskHtml(task.taskName, task.description, task.assignedTo, formattedDate, task.status);
+      tasksHtmlList.push(taskHtml);
+    })
+    tasksHtmlList.forEach(() => {
+      document.getElementById("taskList").innerHTML = tasksHtmlList;
+    })
+    let tasksHtml = tasksHtmlList.join('\n');
+
+    document.getElementById('taskList').innerHTML = tasksHtml;
+  }
 };
 // make new instance of the TaskManager to store the tasks array and .addTask() method
 const newTask = new TaskManager()
