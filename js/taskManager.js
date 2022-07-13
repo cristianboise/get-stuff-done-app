@@ -41,8 +41,6 @@ class TaskManager  {
     })
     return foundTask;
   }
-
-
   render(){
     let tasksHtmlList = [];
     this.tasks.forEach((task) => {

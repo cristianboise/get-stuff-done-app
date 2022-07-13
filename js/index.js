@@ -48,6 +48,10 @@ let tasksList = document.querySelector('#taskList');
 tasksList.addEventListener('click', (event) => {
     if (event.target.classList.contains('done-button') ) {
         let taskCard = event.target.parentElement.parentElement.parentElement
-        console.log('task card:', taskCard);
+        let taskId = parseInt(taskCard.getAttribute("data-task-id"));
+        let task = newTask.getTaskById(taskId);
+        task.status = "Done";
+        newTask.render();
+        // console.log('task card:', taskCard);
     }
 })
