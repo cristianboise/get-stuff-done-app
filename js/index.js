@@ -44,3 +44,10 @@ document.getElementById("submit-form").addEventListener("submit", function(event
       newTask.render();
     });
 
+let tasksList = document.querySelector('#taskList');
+tasksList.addEventListener('click', (event) => {
+    if (event.target.classList.contains('done-button') ) {
+        let taskCard = event.target.parentElement.parentElement.parentElement
+        console.log('task card:', taskCard);
+    }
+})
