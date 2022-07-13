@@ -32,6 +32,17 @@ class TaskManager  {
     };
     this.tasks.push(task);
   }
+  getTaskById(taskId) {
+    let foundTask;
+    this.tasks.forEach((task) => {
+      if(task.id === taskId) {
+        foundTask = task;
+      }
+    })
+    return foundTask;
+  }
+
+
   render(){
     let tasksHtmlList = [];
     this.tasks.forEach((task) => {
