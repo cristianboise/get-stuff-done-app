@@ -1,6 +1,6 @@
-const createTaskHtml = (taskName, description, assignedTo, dueDate, status) => {
+const createTaskHtml = (id, taskName, description, assignedTo, dueDate, status) => {
   const html = `
-    <li class="list-group-item">
+    <li class="list-group-item" data-task-id="${id}">
       <div class="card" style="width: 18rem;">
         <div class="card-body">
             <h5 class="card-title">${taskName}</h5>
@@ -37,7 +37,7 @@ class TaskManager  {
     this.tasks.forEach((task) => {
       let newDate = new Date(task.dueDate);
       let formattedDate = `${newDate.getMonth() + 1}/${newDate.getDate()}/${newDate.getFullYear()}`;
-      let taskHtml = createTaskHtml(task.taskName, task.description, task.assignedTo, formattedDate, task.status);
+      let taskHtml = createTaskHtml(task.id, task.taskName, task.description, task.assignedTo, formattedDate, task.status);
       tasksHtmlList.push(taskHtml);
     })
     tasksHtmlList.forEach(() => {
