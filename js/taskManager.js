@@ -65,6 +65,18 @@ class TaskManager  {
     console.log(tasksJson);
     console.log(currentId);
   }
+  load(){
+    if (localStorage.getItem('tasks')) {
+      const tasksJson = localStorage.getItem('tasks');
+      this.tasks = JSON.parse(tasksJson);
+    }
+    if (localStorage.getItem('currentId')) {
+      const currentId = localStorage.getItem('currentId');
+      this.currentId = Number(currentId);
+    }
+  };
 };
 // make new instance of the TaskManager to store the tasks array and .addTask() method
-const newTask = new TaskManager()
+const newTask = new TaskManager();
+newTask.load();
+newTask.render();
