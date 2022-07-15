@@ -16,6 +16,7 @@ document.getElementById("submit-form").addEventListener("submit", function(event
             assignedToValue,
             dueDateValue
         )
+        newTask.save();
         console.log(newTask.tasks)
         // clear the fields for new task submission
         document.getElementById("taskName").value = ''

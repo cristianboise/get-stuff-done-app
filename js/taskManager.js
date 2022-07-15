@@ -56,6 +56,15 @@ class TaskManager  {
 
     document.getElementById('taskList').innerHTML = tasksHtml;
   }
+  save(){
+    console.log('save fired');
+    let tasksJson = JSON.stringify(this.tasks);
+    localStorage.setItem('tasks', tasksJson);
+    let currentId = JSON.stringify(this.currentId);
+    localStorage.setItem('currentId', currentId);
+    console.log(tasksJson);
+    console.log(currentId);
+  }
 };
 // make new instance of the TaskManager to store the tasks array and .addTask() method
 const newTask = new TaskManager()
