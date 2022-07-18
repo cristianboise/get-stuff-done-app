@@ -42,17 +42,25 @@ document.getElementById("submit-form").addEventListener("submit", function(event
             document.getElementById("AlertMessage").style.display = 'block';
             document.getElementById("AlertMessage").innerHTML = `The following fields are required: ${alertList}`
         }
-      newTask.render();
+        newTask.render();
     });
 
 let tasksList = document.querySelector('#taskList');
 tasksList.addEventListener('click', (event) => {
     if (event.target.classList.contains('done-button') ) {
-        let taskCard = event.target.parentElement.parentElement.parentElement
+        let taskCard = event.target.parentElement.parentElement.parentElement;
         let taskId = parseInt(taskCard.getAttribute("data-task-id"));
         let task = newTask.getTaskById(taskId);
         task.status = "Done";
+        newTask.save();    
         newTask.render();
         // console.log('task card:', taskCard);
+    }
+    if (event.target.classList.contains('delete-button')){
+        let parentTask = event.target.parentElement.parentElement.parentElement;
+        let taskId = parseInt(parentTask.getAttribute("data-task-id"));
+        newTask.deleteTask(taskId);
+        newTask.save();    
+        newTask.render();
     }
 })
