@@ -32,6 +32,16 @@ class TaskManager  {
     };
     this.tasks.push(task);
   }
+  deleteTask(taskId) {
+    const newTasks = [];
+    for (let i = 0 ; i < this.task.length; i++) {
+      const task = this.task[i];
+      if (task.id !== taskId) {
+        newTasks.push(task);
+      }
+    }
+      this.tasks = newTasks;
+  }
   getTaskById(taskId) {
     let foundTask;
     this.tasks.forEach((task) => {
