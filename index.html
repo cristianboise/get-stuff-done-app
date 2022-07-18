@@ -9,11 +9,13 @@
         <script src="js/index.js" defer></script>
     </head>
     <body>
-        <div class="container">
+        <div class="container pb-5">
             <form id="submit-form">
-                <div class="row">Get Stuff Done</div>
+                <div class="row py-5 d-flex justify-content-center">
+                    <h1>Get Stuff Done</h1>
+                </div>
                 <div class="row">
-                    <div class="col">
+                    <div class="col mr-2">
                         <div class="row">
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
@@ -39,33 +41,24 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col">
+                    <div class="col ml-2">
                         <div class="row">
-                                <div class="form-group">
-                                    <label for="exampleFormControlTextarea1">Description</label>
-                                    <textarea id="description" class="form-control" rows="3"></textarea>
-                                </div>
+                            <div class="form-group">
+                                <textarea id="description" class="form-control" rows="6" cols="60rem" placeholder="Description"></textarea>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="row"><button type="submit" id="submitButton" class="btn btn-secondary">Add Task</button></div>
-                <div id="AlertMessage" class="alert alert-danger" style="display: none">
+                <div class="row"><button type="submit" id="submitButton" class="btn btn-lg btn-secondary" style="width: 14rem; height: 5rem;">Add Task</button></div>
+                <div id="AlertMessage" class="alert alert-danger my-3" style="display: none">
                 </div>
             </form>
         </div>
-            
-            <div class="row">
-                <button type="button" class="button">To Do</button>
-                <button type="button" class="button">In Progress</button>
-                <button type="button" class="button">Done</button>
-                <button type="button" class="button">Overdue</button>
-                <button type="button" class="button">All Tasks</button>
-            </div>
-        </div>
-        <h2>Task List</h2>
+
+        <h2 class="text-center">Task List</h2>
         <div id ="taskList" class="col-12">
             <ul class="list-group">
-                
+
             </ul>
         </div>
     </body>

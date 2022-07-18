@@ -26,17 +26,17 @@ document.getElementById("submit-form").addEventListener("submit", function(event
         } else {
             // alert('Form is either incomplete or invalid.  Please try again.')
             let alertList = [];
-            if (taskNameValue  === "") {
-                alertList.push('taskname')
-            }
-            if (descriptionValue  === "") {
-                alertList.push('description')
-            }
             if (assignedToValue  === "") {
-                alertList.push('assignedTo')
+                alertList.push('Assigned To')
             }
             if (dueDateValue  === "") {
-                alertList.push('dueDate')
+                alertList.push('Due Date')
+            }
+            if (taskNameValue  === "") {
+                alertList.push('Task Name')
+            }
+            if (descriptionValue  === "") {
+                alertList.push('Description')
             }
             alertList = alertList.join(", ");
             document.getElementById("AlertMessage").style.display = 'block';
